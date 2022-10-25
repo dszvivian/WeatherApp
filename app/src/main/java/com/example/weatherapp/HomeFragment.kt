@@ -2,18 +2,16 @@ package com.example.weatherapp
 
 import android.app.Application
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.example.weatherapp.Extension.toast
 import com.example.weatherapp.UnitConversion.convertToCelsius
 import com.example.weatherapp.UnitConversion.convertToFahrenheit
+import com.example.weatherapp.UnitConversion.getTempUnit
 import com.example.weatherapp.ViewModels.MainViewModel
 import com.example.weatherapp.databinding.FragmentHomeBinding
-import com.example.weatherapp.models.CurrentWeatherModel
-import retrofit2.Response
 
 class HomeFragment: Fragment(R.layout.fragment_home) {
 
@@ -32,14 +30,14 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
 
         val application = Application()
 
-        val getTempData = getTempUnit()
+        val getTempData = getTempUnit(requireContext())
 
         viewModel = ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(MainViewModel::class.java)
 
         viewModel.getTempByLatAndLon(13.3318 , 74.7454)
 
 
-        viewModel.responseVm.observe(viewLifecycleOwner){response ->
+        viewModel.responseByLanLonVm.observe(viewLifecycleOwner){ response ->
             if(response.isSuccessful  && response.body() != null){
 
                 if(getTempData){
@@ -52,17 +50,18 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
                 binding.tvHomePlace.text = response.body()!!.name
                 binding.tvHomeSubText.text = "Wind Speed : ${response.body()!!.wind.speed.toString()}"
                 binding.tvHomeWeather.text = response.body()!!.weather[0].description
+
+                val iconId = response.body()!!.weather[0].icon
+
+                Glide
+                    .with(requireActivity())
+                    .load("https://openweathermap.org/img/wn/${iconId}@2x.png")
+                    .into(binding.ivHome)
+
             }else{
                 requireActivity().toast("An Error Occurred in Response")
             }
         }
-
-
-    }
-
-    private fun getTempUnit(): Boolean {
-
-        return tempSettings.getTempDisplaySettings().name != TempDisplaySettings.Celsius.name
 
 
     }

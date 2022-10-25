@@ -7,7 +7,7 @@
         android:icon="@drawable/home_icon"
         />
     <item
-        android:id="@+id/bnv_ItemSearch"
+        android:id="@+id/searchFragment"
         android:title="Search"
         android:icon="@drawable/search_icon"
         />

@@ -4,19 +4,16 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.weatherapp.Extension.toast
 import com.example.weatherapp.RetrofitInstance
-import com.example.weatherapp.UnitConversion
 import com.example.weatherapp.models.CurrentWeatherModel
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    val responseVm = MutableLiveData<Response<CurrentWeatherModel>>()
+    val responseByLanLonVm = MutableLiveData<Response<CurrentWeatherModel>>()
+    val responseByCityVm = MutableLiveData<Response<CurrentWeatherModel>>()
 
     fun getTempByLatAndLon(lat:Double , lon:Double) = viewModelScope.launch {
         val response = try{
@@ -26,8 +23,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             return@launch
         }
 
-        responseVm.postValue(response)
+        responseByLanLonVm.postValue(response)
 
     }
+
+    fun getTempByCity(city:String) = viewModelScope.launch {
+        val response = try{
+            RetrofitInstance.api.getWeatherByCity(city)
+        }catch (e:Exception){
+            Log.e("ERROR", e.message!!)
+            return@launch
+        }
+        responseByCityVm.postValue(response)
+    }
+
+
 
 }

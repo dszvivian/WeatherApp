@@ -1,4 +1,4 @@
-package com.example.weatherapp.models
+package com.example.weatherapp.ViewModels.models
 
 
 import com.google.gson.annotations.SerializedName
@@ -16,5 +16,5 @@ data class CurrentWeatherModel(
     val timezone: Int,
     val visibility: Int,
     val weather: List<Weather>,
-    val wind: Wind
+    val wind: Wind,
 )

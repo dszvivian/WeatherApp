@@ -9,11 +9,11 @@ import androidx.fragment.app.Fragment
 import com.example.weatherapp.Extension.toast
 import com.example.weatherapp.databinding.FragmentSettingsBinding
 
-private lateinit var binding : FragmentSettingsBinding
+private lateinit var binding: FragmentSettingsBinding
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
-    private lateinit var tempSettings:TempDisplaySettingManager
+    private lateinit var tempSettings: TempDisplaySettingManager
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,10 +35,9 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
             val isF = binding.isF.isChecked
 
-            if(isF) {
+            if (isF) {
                 tempSettings.updateSetting(TempDisplaySettings.Fahrenheit)
-            }
-            else{
+            } else {
                 tempSettings.updateSetting(TempDisplaySettings.Celsius)
             }
 

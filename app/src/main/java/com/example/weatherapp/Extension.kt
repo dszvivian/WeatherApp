@@ -5,8 +5,8 @@ import android.widget.Toast
 
 object Extension {
 
-    fun Activity.toast(message:String){
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+    fun Activity.toast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
 }

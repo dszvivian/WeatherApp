@@ -5,9 +5,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-
-
-
     val api: ApiInterface by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.openweathermap.org/")
@@ -15,7 +12,5 @@ object RetrofitInstance {
             .build()
             .create(ApiInterface::class.java)
     }
-
-
 
 }

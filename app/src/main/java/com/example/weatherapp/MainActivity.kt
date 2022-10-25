@@ -25,11 +25,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        window.statusBarColor = ContextCompat.getColor(this,R.color.dark_sky_blue)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.dark_sky_blue)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         binding.bnvMain.setupWithNavController(navHostFragment.navController)
-
 
 
 //        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 //
 //
 //        binding.bnvMain.setupWithNavController(navController)
-
 
 
 //        binding.bnvMain.setOnNavigationItemSelectedListener {

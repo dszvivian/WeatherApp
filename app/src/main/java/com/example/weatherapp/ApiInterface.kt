@@ -22,4 +22,6 @@ interface ApiInterface {
         @Query("appid") apiKey: String = "652a358cdd742886e879118383a4ed89",
     ): Response<CurrentWeatherModel>
 
+
+
 }

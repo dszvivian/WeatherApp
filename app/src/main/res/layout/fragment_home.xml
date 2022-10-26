@@ -91,7 +91,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/bnv_background"
         android:padding="20dp"
-        android:text="Monday 29,March"
+        android:text="Tuesday 25,Oct"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold|normal"

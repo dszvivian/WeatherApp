@@ -24,7 +24,8 @@ This app has currently Three main Features
 ## Screenshots
 
 
-<a href="https://postimg.cc/bsrKj6vt" target="_blank"><img src="https://i.postimg.cc/7YnD0d8m/city-Screen-Weather-App.png" alt="city-Screen-Weather-App"/></a> <a href="https://postimg.cc/2qRJhr7Q" target="_blank"><img src="https://i.postimg.cc/BvX0Wv8V/home-Screen-Weather-App.png" alt="home-Screen-Weather-App"/></a><br/><br/>
+<a href="https://postimg.cc/bsrKj6vt" target="_blank"><img src="https://i.postimg.cc/7YnD0d8m/city-Screen-Weather-App.png" alt="city-Screen-Weather-App"/></a> <a href="https://postimg.cc/2qRJhr7Q" target="_blank"><img src="https://i.postimg.cc/BvX0Wv8V/home-Screen-Weather-App.png" alt="home-Screen-Weather-App"/></a> <a href="https://postimg.cc/PP70fmLF" target="_blank"><img src="https://i.postimg.cc/FHFvZphm/settings-Screen-Weather-App.png" alt="settings-Screen-Weather-App"/></a><br/><br/>
+
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_GitHUb-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/dszvivian/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vivian-d-souza-0311571ba/)
